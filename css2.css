@@ -1,0 +1,398 @@
+.buscador{
+	height:40px; 
+	width: 93%;
+    margin-left: 0%;
+    background-color: #EDEDED;
+	border-radius:250px;
+	float: right;
+    outline:0px;
+    border: none;
+}
+
+.divbusc{
+    padding-left: 0%;
+    background-color: #EDEDED; 
+	height:40px; 
+	width: 100%;
+	margin-top: 25px;
+	border-radius:250px;
+}
+
+.menu{
+	color: #8e8e8e;
+	height: 40px;
+	padding: 5px;
+	font-family: 'Hind', sans-serif;
+	font-weight: 900;
+	font-size: 15px;
+}
+
+.mboton{
+    width: 400px;
+}
+
+.sf{
+    margin-left: 2%;
+}
+@media (min-width:  200.98px) and (max-width: 767.98px){
+    .sf{
+        
+        margin-left: 0%;
+    }
+    
+    .buscador{
+    	widcth: 80%;
+    }
+}
+
+@media (min-width:  767.98px) and (max-width: 1232.98px){
+    .sf{
+        
+        margin-left: 0%;
+    }
+    
+    .buscador{
+    	width: 80%;
+    }
+    
+}
+
+.tmenu{
+	margin-top: 33px;
+}
+
+.menu:hover{
+	color: #B0DDB1;
+    text-decoration: none;
+}
+
+.fbusc{
+    border-radius: 80px; 
+    box-shadow: rgba(176, 221, 177, 0.5) 0px 0px 0px 2px;
+}
+
+.icono{
+    padding: 5px;
+    color: #8e8e8e;
+}
+
+.icon{
+    padding: 27px;
+    color: #8e8e8e;
+}
+
+.icon:hover{
+    color: #B0DDB1;
+}
+
+.carga{
+    height: 600px;
+    border-radius: 80px;
+    margin-top: 50px;
+	background-color: #EDEDED; 
+    border: 2px solid #B0DDB1;
+}
+.carga form{
+    margin-top: 50px;
+    border: 2px solid #B0DDB1;
+    width: 155px;
+    height: 34px;
+}
+
+.fondo{
+    background-image: url("fondo4.png");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+	background-position: center;
+}
+
+.carg{
+    width: 100%;
+    margin-top: 1%;
+}
+
+.cmenu{
+    margin-top: 30%;
+    height: 5%;
+    /*background-color: white;*/
+    border-radius: 5px;
+}
+
+.fondo2{
+    background-image: url("fondo3.png");
+    width: 100%;
+    height: 100vh;
+    /*background-size: cover;*/
+    background-repeat: no-repeat;
+	/*background-position: center;*/
+	background-attachment: fixed;
+}
+
+.login{
+    background-color: white;
+    margin: auto;
+    margin-top: 14%;
+    width: 500px;
+    height: auto;
+    border-radius: 80px;
+    opacity: 0.7;
+	font-family: 'Hind', sans-serif;
+	font-weight: 900;
+}
+
+.registro{
+    background-color: white;
+    margin: auto;
+    margin-top: 12%;
+    width: 500px;
+    height: auto;
+    border-radius: 80px;
+    opacity: 0.7;
+	font-family: 'Hind', sans-serif;
+	font-weight: 900;
+}
+
+.registro>h2{
+    margin-left: 40%;
+    margin-top: 1%;
+}
+
+.registro>p{
+    margin-left: 25%;
+    margin-top: 10%;
+}
+
+.login>p:hover{
+    color: red;
+}
+
+
+.login>h2{
+    margin-left: 40%;
+    margin-top: 1%;
+}
+
+.login>p{
+    margin-left: 25%;
+    margin-top: 10%;
+}
+
+.login>p:hover{
+    color: red;
+}
+
+.lform{
+    margin-left: 30%;
+    margin-top: 0%;
+	font-family: 'Hind', sans-serif;
+	font-weight: 900;
+}
+
+.inombre{
+    border-radius: 80px;
+    background-color: #7E7E7E; 
+    border: none;
+    outline:0px;
+    color: white;
+	font-family: 'Hind', sans-serif;
+	width: 200px;
+	padding-left: 20%;
+}
+
+.iapellido{
+    border-radius: 80px;
+    background-color: #7E7E7E; 
+    border: none;
+    outline:0px;
+    color: white;
+	font-family: 'Hind', sans-serif;
+	width: 200px;
+	padding-left: 20%;
+}
+
+.ninput{
+    border-radius: 80px;
+    background-color: #7E7E7E; 
+    border: none;
+    outline:0px;
+    color: white;
+	font-family: 'Hind', sans-serif;
+	width: 200px;
+	padding-left: 20%;
+}
+
+.colum1{
+    margin-left: 1%;
+}
+/*.colum2{*/
+/*    height: 91vh;*/
+/*    padding-right: 1%;*/
+/*    padding-left: 0%;*/
+/*}*/
+/*.colum3{*/
+/*    height: 91vh;*/
+/*    padding-right: 1%;*/
+/*    padding-left: 0%;*/
+/*}*/
+/*.colum4{*/
+/*    height: 91vh;*/
+/*    padding-right: 1%;*/
+/*    padding-left: 0%;*/
+/*}*/
+/*.colum5{*/
+/*    height: 91vh;*/
+/*    padding-right: 1%;*/
+/*    padding-left: 0%;*/
+/*}*/
+
+.background{
+    background-color: white;
+}
+
+.imagen{
+    margin-top: 5%;
+    width: 70%;
+    border-radius: 5px;
+}
+
+.minput{
+    border-radius: 80px;
+    background-color: #7E7E7E; 
+    border: none;
+    outline:0px;
+    color: white;
+	font-family: 'Hind', sans-serif;
+	width: 200px;
+	padding-left: 20%;
+}
+
+.pinput{
+    border-radius: 80px;
+    background-color: #7E7E7E; 
+    border: none;
+    outline:0px;
+    color: white;
+	font-family: 'Hind', sans-serif;
+	width: 200px;
+	padding-left: 20%;
+}
+
+.cinput{
+    border-radius: 80px;
+    background-color: #7E7E7E; 
+    border: none;
+    outline:0px;
+    color: white;
+	font-family: 'Hind', sans-serif;
+	width: 200px;
+	padding-left: 20%;
+}
+
+.binput{
+    border-radius: 80px;
+    background-color: #7E7E7E; 
+    border: none;
+    outline:0px;
+    color: white;
+	font-family: 'Hind', sans-serif;
+	margin-left: 20%;
+}
+
+.binput_reg{
+    border-radius: 80px;
+    background-color: #7E7E7E; 
+    border: none;
+    outline:0px;
+    color: white;
+	font-family: 'Hind', sans-serif;
+	margin-left: 20%;
+	margin-bottom: 10%;
+}
+
+.divnom{
+    border-radius: 80px;
+    background-color: #7E7E7E;
+    width: 50px;
+}
+
+.divap{
+    border-radius: 80px;
+    background-color: #7E7E7E;
+    width: 50px;
+}
+
+.divpin{
+    border-radius: 80px;
+    background-color: #7E7E7E;
+    width: 50px;
+}
+
+.divcin{
+    border-radius: 80px;
+    background-color: #7E7E7E;
+    width: 50px;
+}
+
+.divnin{
+    border-radius: 80px;
+    background-color: #7E7E7E;
+    width: 50px;
+}
+
+.divmin{
+    border-radius: 80px;
+    background-color: #7E7E7E;
+    width: 50px;
+}
+
+.req{
+    text-decoration: underline;
+}
+
+.requisitos_login{
+    margin-right: 10%;
+}
+
+.requisitos_reg{
+    margin-right: 10%;
+}
+
+#nerror{
+    color: red;
+    font-size: 13px;
+}
+
+#merror{
+    color: red;
+    font-size: 13px;
+}
+
+#errornom{
+    color: red;
+    font-size: 13px;
+}
+
+#errorap{
+    color: red;
+    font-size: 13px;
+}
+
+.perror{
+    color: red;
+    font-size: 13px;
+}
+
+.cerror{
+    color: red;
+    font-size: 13px;
+}
+
+.invisible{
+    display: none;
+}
+
+.Amenu{
+	background-color: white;
+}
