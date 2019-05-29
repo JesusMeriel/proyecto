@@ -27,6 +27,15 @@
 	font-size: 15px;
 }
 
+.nomu{
+    font-family: 'Hind', sans-serif;
+	font-weight: 900;
+	font-size: 15px;
+	color: #8e8e8e;
+	margin-top: 30px;
+	margin-left: 30px;
+}
+
 .mboton{
     width: 400px;
 }
@@ -78,6 +87,7 @@
 
 .icon{
     padding: 27px;
+    margin-left: -30px;
     color: #8e8e8e;
 }
 
@@ -253,7 +263,7 @@
 
 .imagen{
     margin-top: 5%;
-    width: 70%;
+    width: 100%;
     border-radius: 5px;
 }
 
