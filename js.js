@@ -12,7 +12,6 @@ $(document).ready(function() {
     $(".cerror").click(requisitos_reg);
     entrar = 0;
     $(".binput").click(validacion_servidor);
-    sesion();
 });
 
 function a(){
@@ -114,7 +113,7 @@ function validacion_servidor(){
     if (!!mail) {
         $.ajax({
            type: "POST",
-           url: "login.php",
+           url: "call_login.php",
            data: {
                'mail':mail,
                'pass':pass
@@ -126,6 +125,7 @@ function validacion_servidor(){
                 }else{
                     $(".perror").html("*El mail o la contraseña son incorrectos")
                 }
+                console.log(data);
             }
          });
     } else { 

@@ -14,15 +14,11 @@ function sesion(){
 }
 
 function cerrar_sesion(){
-    close = 1;
     $.ajax({
        type: "POST",
-       url: "comprueba_sesion.php",
-       data: {
-               'close':close,
-        },
+       url: "logout.php",
        success: function(data) {
-            $(".nomu").html(data);
+           window.location.href = "index.html";
         }
     });
 }
