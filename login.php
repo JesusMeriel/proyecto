@@ -1,15 +1,12 @@
 <?php
     include 'conexion.php';
-    
+    session_start();
         
     class Login {
-    
-        // Declaracion de una propiedad
-        private $tipo = false;
         
         
         public $mail;
-        public $password;
+        public $pass;
         
         public function comprobar_login($mail, $pass){
             $dbh = DatabaseHandler::getConnection();
@@ -17,9 +14,9 @@
             $stmt->execute([":mail" => $mail,":pass" => $pass]);
             
             if($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                return 1;
-                session_start();
                 $_SESSION["mail"] = $mail;
+                return 1;
+                
             }else{
                 return 2;
             }
@@ -30,12 +27,12 @@
         
         
         public function close_sesion(){
-            session_start();
             session_destroy();
         }
         
-        public function comprueba_sesion(){
-            session_start();
+        public function comprueba_sesion($mail, $pass){
+            
+            $dbh = DatabaseHandler::getConnection();
             if(isset($_SESSION["mail"])){
                 $mail = $_SESSION["mail"];
                 $dbh = DatabaseHandler::getConnection();
@@ -48,7 +45,6 @@
                 }
             }else{
                 $mail = $_SESSION["mail"];
-                echo("<script>alert(". $mail .");</script>");
                 echo("<script>window.location = 'index.html';</script>");
             }
         }

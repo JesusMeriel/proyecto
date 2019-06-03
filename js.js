@@ -12,8 +12,11 @@ $(document).ready(function() {
     $(".cerror").click(requisitos_reg);
     entrar = 0;
     $(".binput").click(validacion_servidor);
+    $(".binput_reg").click(datos_registro);
+    $("#busqueda").keyup(buscar);
+    
 });
-
+ok = 0;
 function a(){
     $(".divbusc").addClass("fbusc");
 }
@@ -22,6 +25,24 @@ function b(){
     $(".divbusc").removeClass("fbusc");
 }
 
+function buscar(){
+    resul_busqueda = $(".buscador").val();
+    if (!!resul_busqueda) {
+        $.ajax({
+           type: "POST",
+           url: "buscar.php",
+           cache: false,
+           data: {
+               'resul_busqueda':resul_busqueda
+           },
+           success: function(data) {
+                
+            }
+         });
+    } else { 
+        $("#resultadoBusqueda").html('');
+	} 
+}
 
 function requisitos_login(){
     $(".login").css("margin-top","10%");
@@ -51,31 +72,34 @@ function verificaMail_reg(){
     var expresion_regular = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 	if(expresion_regular.test($(".minput").val())){
 	    $("#merror").html(" ");
-		return(true);
+		m = "t";
 	}else{
 		$("#merror").html("*La sintaxis del mail no es correcta");
+		ok--;
 		return(false);
 	}
 }
 
 function verificanom(){
-    var expresion_regular = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/
+    var expresion_regular = /^([A-ZÁÉÍÓÚ a-zñáéíóú]{1}[a-zñáéíóú]+[\s]*)+$/
     if(expresion_regular.test($(".inombre").val())){
 	    $("#errornom").html(" ");
-		return(true);
+		n = "t";
 	}else{
 		$("#errornom").html("*La sintaxis del  nombre no es correcta");
+		ok--;
 		return(false);
 	}
 }
 
 function verificaap(){
-    var expresion_regular = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/
+    var expresion_regular = /^([A-ZÁÉÍÓÚ a-zñáéíóú]{1}[a-zñáéíóú]+[\s]*)+$/
     if(expresion_regular.test($(".iapellido").val())){
 	    $("#errorap").html(" ");
-		return(true);
+		a = "t";
 	}else{
 		$("#errorap").html("*La sintaxis del  apellido no es correcta");
+		ok--;
 		return(false);
 	}
 }
@@ -95,9 +119,10 @@ function verificaPass_reg(){
     var expresion_regular = /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/;
 	if(expresion_regular.test($(".cinput").val())){
 	    $(".cerror").html(" ");
-		return(true);
+		p = "t";
 	}else{
-		$(".cerror").html("*La contraseña  no cumpe con los <p class='req'>requisitos</p>");
+		$(".cerror").html("*La contraseña  no cumpe con los <p class='req'>requisitos</p>")
+		ok--;
 		return(false);
 	}
 }
@@ -114,6 +139,7 @@ function validacion_servidor(){
         $.ajax({
            type: "POST",
            url: "call_login.php",
+           cache: false,
            data: {
                'mail':mail,
                'pass':pass
@@ -131,4 +157,41 @@ function validacion_servidor(){
     } else { 
         $("#resultadoBusqueda").html('');
 	}
+}
+
+function datos_registro(){
+    nombre = $(".inombre").val();
+    apellido = $(".iapellido").val();
+    mail = $(".minput").val();
+    pass = $(".cinput").val();
+    
+    console.log(n +" "+ a +" "+ m +" "+ p);
+    if((p === "t")&&(n === "t")&&(m === "t")&&(a === "t")){
+        alert("entra");
+        $.ajax({
+           type: "POST",
+           url: "call_insert.php",
+           cache: false,
+           data: {
+               'nombre':nombre,
+               'apellido':apellido,
+               'mail':mail,
+               'pass':pass
+           },
+           success: function(data) {
+                if(data != 2){
+                    $(".inombre").val("");
+                    $(".iapellido").val("");
+                    $(".minput").val("");
+                    $(".cinput").val("");
+                    $(".registro").addClass("invisible");
+                    $(".login").removeClass("invisible");
+                    ok = 0;
+                }else{
+                    $("#merror").html("*El correo utilizado ya está registrado");
+		            ok=2;
+                }
+            }
+         });
+    }
 }

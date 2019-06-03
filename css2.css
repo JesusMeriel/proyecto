@@ -43,6 +43,17 @@
 .sf{
     margin-left: 2%;
 }
+
+/*@media (min-width:  767.98px) and (max-width: 1698px){*/
+    
+/*    #busqueda{*/
+/*    	width: 10%;*/
+/*    }*/
+/*    .divbusc{*/
+/*    	width: 10;*/
+/*    }*/
+/*}*/
+
 @media (min-width:  200.98px) and (max-width: 767.98px){
     .sf{
         
@@ -50,7 +61,7 @@
     }
     
     .buscador{
-    	widcth: 80%;
+    	width: 60%;
     }
 }
 
@@ -146,7 +157,7 @@
     margin-top: 14%;
     width: 500px;
     height: auto;
-    border-radius: 80px;
+    border-radius: 40px;
     opacity: 0.7;
 	font-family: 'Hind', sans-serif;
 	font-weight: 900;
@@ -158,7 +169,7 @@
     margin-top: 12%;
     width: 500px;
     height: auto;
-    border-radius: 80px;
+    border-radius: 40px;
     opacity: 0.7;
 	font-family: 'Hind', sans-serif;
 	font-weight: 900;

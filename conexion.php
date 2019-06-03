@@ -1,5 +1,5 @@
 <?php
-   class DatabaseHandler {
+  class DatabaseHandler {
     const DATABASE_HOST    = "localhost";
     const DATABASE_USER    = "merielje_pagina";
     const DATABASE_PASS    = "jesusmeriel.23";

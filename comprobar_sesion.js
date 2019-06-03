@@ -8,6 +8,7 @@ function sesion(){
        type: "POST",
        url: "comprueba_sesion.php",
        success: function(data) {
+           console.log(data)
             $(".nomu").html(data);
         }
     });
