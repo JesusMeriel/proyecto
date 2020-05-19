@@ -3,12 +3,32 @@ $(document).ready(function() {
     $(".icon").click(cerrar_sesion);
 });
 
+
+function rol(){
+    $.ajax({
+        type: "POST",
+        url: "call_login.php",
+        data: {
+            'nombre':nombre
+        },
+        success: function(data) {
+           if(data == 1){
+               
+           }else{
+               $("#nombre_usuario").html(nombre);
+               
+           }
+        }
+    });
+}
+
 function sesion(){
     $.ajax({
        type: "POST",
        url: "comprueba_sesion.php",
        success: function(data) {
-           console.log(data)
+            nombre = data;
+            rol();
             $(".nomu").html(data);
         }
     });

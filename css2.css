@@ -32,8 +32,21 @@
 	font-weight: 900;
 	font-size: 15px;
 	color: #8e8e8e;
-	margin-top: 30px;
-	margin-left: 30px;
+	background-color: white;
+	border: none;
+}
+
+.nomu:hover{
+	color: #8e8e8e;
+	background-color: white;
+	border: none;
+}
+
+.dropdown-menu{
+	color: #8e8e8e;
+    font-family: 'Hind', sans-serif;
+	font-weight: 900;
+	font-size: 15px;
 }
 
 .mboton{
@@ -416,4 +429,61 @@
 
 .Amenu{
 	background-color: white;
+}
+
+#nombre_usuario{
+    font-family: 'Hind', sans-serif;
+	font-weight: 900;
+	font-size: 15px;
+	color: #8e8e8e;
+	margin-top: 30px;
+	margin-left: 30px;
+}
+
+.estiloAd{
+    font-family: 'Hind', sans-serif;
+	font-weight: 900;
+	font-size: 15px;
+	color: #8e8e8e;
+}
+
+.estiloAd:hover{
+    text-decoration: none;
+    color: #8e8e8e;
+}
+
+.divT{
+    font-family: 'Hind', sans-serif;
+    text-align: center;
+    margin: auto;
+    margin-top: 10%;
+    background-color: white;
+    border-radius: 20px;
+    width: 40%;
+    opacity:0.9;
+}
+
+.tablaU{
+    width: 100%;
+}
+
+.bordes{
+    /*border: 3px solid #B0DDB1;*/
+    color: #666666;
+	font-size: 15px;
+    font-family: 'Hind', sans-serif;
+}
+
+.removeicon{
+}
+
+/*.jodr{*/
+/*    margin-right: 30%;*/
+/*}*/
+
+.bordes2{
+    /*border: 3px solid #B0DDB1;*/
+    color: #666666;
+	font-size: 15px;
+    font-family: 'Hind', sans-serif;
 }

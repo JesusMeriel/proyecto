@@ -1,5 +1,5 @@
 <?php
-    include 'login.php';
+    include 'class_login.php';
     $mail = $_POST['mail'];
     $pass = $_POST['pass'];
     $log = new Login();

@@ -14,7 +14,7 @@ $(document).ready(function() {
     $(".binput").click(validacion_servidor);
     $(".binput_reg").click(datos_registro);
     $("#busqueda").keyup(buscar);
-    
+    $(".estiloAd").click(admin_usuario);
 });
 ok = 0;
 function a(){
@@ -23,6 +23,30 @@ function a(){
 
 function b(){
     $(".divbusc").removeClass("fbusc");
+}
+
+function borrar_user(){
+    mail = this.id;
+    if (!!nombre) {
+        $.ajax({
+           type: "POST",
+           url: "delete_usu.php",
+           cache: false,
+           data: {
+               'mail':mail
+           },
+            success: function(data) {
+                if(data==1){
+                    alert("borrado");
+                }else{
+                    alert("no borrado");
+                }
+            }
+         });
+    } else { 
+        $("#resultadoBusqueda").html('');
+	} 
+    
 }
 
 function buscar(){
@@ -151,13 +175,25 @@ function validacion_servidor(){
                 }else{
                     $(".perror").html("*El mail o la contraseña son incorrectos")
                 }
-                console.log(data);
             }
          });
     } else { 
         $("#resultadoBusqueda").html('');
-	}
+    }
 }
+
+
+function admin_usuario(){
+    $.ajax({
+       type: "POST",
+       url: "administrar.php",
+       cache: false,
+       success: function(data) {
+            $(".cuerpo2").html(data);
+            $(".removeicon").click(borrar_user);
+        }
+    });
+} 
 
 function datos_registro(){
     nombre = $(".inombre").val();
