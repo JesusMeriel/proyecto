@@ -1,8 +1,9 @@
 <?php
+
   class DatabaseHandler {
     const DATABASE_HOST    = "localhost";
-    const DATABASE_USER    = "merielje_pagina";
-    const DATABASE_PASS    = "jesusmeriel.23";
+    const DATABASE_USER    = "root";
+    const DATABASE_PASS    = "";
     const DATABASE_DBNAME  = "merielje_pagina";
     const DATABASE_CHARSET = "utf8";
 

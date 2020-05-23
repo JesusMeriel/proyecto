@@ -2,12 +2,18 @@
     include 'conexion.php';
     session_start();
         
+    
+    
     class Login {
         
         
         public $mail;
         public $pass;
+
+
         
+
+
         public function comprobar_login($mail, $pass){
             $dbh = DatabaseHandler::getConnection();
             $stmt = $dbh->prepare("SELECT * FROM usuarios WHERE correo = :mail and password = :pass ");
@@ -15,19 +21,19 @@
             
             if($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $_SESSION["mail"] = $mail;
-                return 1;
+                echo '1';
             }else{
-                return 2;
+                echo '2';
             }
                 
             $dbh = null;
             
         }
         
-        public function comprueba_rol($nombre){
+        public function comprueba_rol($mail){
             $dbh = DatabaseHandler::getConnection();
-            $stmt = $dbh->prepare("SELECT rol FROM usuarios WHERE nombre = :nombre");
-            $stmt->execute([":nombre" => $nombre]);
+            $stmt = $dbh->prepare("SELECT rol FROM usuarios WHERE correo = :mail");
+            $stmt->execute([":mail" => $mail]);
             
             while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $rol = $row['rol'];

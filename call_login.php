@@ -1,6 +1,6 @@
 <?php
     include 'class_login.php';
-    
+
     $mail = $_POST['mail'];
     $pass = $_POST['pass'];
     // $mail = "jesusmeriel@gmail.com";
@@ -10,8 +10,11 @@
         $res = $log -> comprobar_login($mail, $pass);
         echo $res; 
     }
-    $nombre = $_POST['nombre'];
+    
+    $nombre = $_POST['nom'];
+    
     if(isset($nombre)){
+         
         $log = new Login();
         $res = $log -> comprueba_rol($nombre);
         echo $res;

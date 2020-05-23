@@ -173,7 +173,7 @@ function validacion_servidor(){
                 if(data == 1){
                     location.href="home.html";
                 }else{
-                    $(".perror").html("*El mail o la contraseña son incorrectos")
+                    $(".perror").html("*El mail o la contraseña son incorrectos*")
                 }
             }
          });

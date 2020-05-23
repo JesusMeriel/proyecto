@@ -1,21 +1,23 @@
 $(document).ready(function() {
-    sesion();
+    $(".binput").click(sesion);
     $(".icon").click(cerrar_sesion);
 });
 
 
-function rol(){
+function rol(nom){
+  alert("nom");
     $.ajax({
         type: "POST",
         url: "call_login.php",
+        cache: false,
         data: {
-            'nombre':nombre
+            'nom':nom,
         },
         success: function(data) {
            if(data == 1){
                
            }else{
-               $("#nombre_usuario").html(nombre);
+               $("#nombre_usuario").html(nom);
                
            }
         }
@@ -23,12 +25,18 @@ function rol(){
 }
 
 function sesion(){
+    mail = $(".ninput").val();
+    pass = $(".pinput").val();
     $.ajax({
        type: "POST",
        url: "comprueba_sesion.php",
+       data: {
+            'mail':mail,
+            'pass':pass
+        },
        success: function(data) {
             nombre = data;
-            rol();
+            rol(nombre);
             $(".nomu").html(data);
         }
     });
