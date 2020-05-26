@@ -12,10 +12,25 @@ $(document).ready(function() {
     $(".cerror").click(requisitos_reg);
     entrar = 0;
     $(".binput").click(validacion_servidor);
+    $(".binput").click(enviar_inf);
     $(".binput_reg").click(datos_registro);
     $("#busqueda").keyup(buscar);
     $(".estiloAd").click(admin_usuario);
+    // setTimeout(function(){  alert("espera");   alert(mail); }, 3000);
+    
+
+    // $("#inf").text(mail);
+    // p = $("#inf").html();
+    // if(p == undefined){
+
+    // }else{
+      
+    // }
 });
+
+function prueb(correo){
+  $("#inf").text(correo);
+}
 ok = 0;
 function a(){
     $(".divbusc").addClass("fbusc");
@@ -159,6 +174,8 @@ function registro(){
 function validacion_servidor(){
     mail = $(".ninput").val();
     pass = $(".pinput").val();
+    correo = $(".ninput").val();
+
     if (!!mail) {
         $.ajax({
            type: "POST",
@@ -169,11 +186,12 @@ function validacion_servidor(){
                'pass':pass
            },
            success: function(data) {
-                console.log(data);
+                //alert(data);
                 if(data == 1){
                     location.href="home.html";
+                    prueb(correo);
                 }else{
-                    $(".perror").html("*El mail o la contraseña son incorrectos*")
+                    $(".perror").html("*El mail o la contraseña son incorrectos");
                 }
             }
          });
@@ -230,4 +248,19 @@ function datos_registro(){
             }
          });
     }
+}
+cont = 0;
+function enviar_inf(){
+  alert("inicio "+ cont);
+  cont ++;
+  if(cont == 1){
+    alert(cont);
+    mail = $(".ninput").val();
+    pass = $(".pinput").val();
+  }else if(cont == 2){
+    alert("entra2");
+    $("#inf").text("pene");
+  }
+
+  
 }

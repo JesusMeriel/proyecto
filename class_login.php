@@ -1,12 +1,12 @@
 <?php
     include 'conexion.php';
     session_start();
-        
-    
+    //$dbh = DatabaseHandler::getConnection();
+    // $nombre = "ee";
+    // $log = new Login();
+    // $res = $log -> comprueba_rol($nombre);
     
     class Login {
-        
-        
         public $mail;
         public $pass;
 
@@ -30,15 +30,17 @@
             
         }
         
-        public function comprueba_rol($mail){
-            $dbh = DatabaseHandler::getConnection();
-            $stmt = $dbh->prepare("SELECT rol FROM usuarios WHERE correo = :mail");
-            $stmt->execute([":mail" => $mail]);
+        public function comprueba_rol($nombre){
             
-            while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $dbh = DatabaseHandler::getConnection();
+            $stmt = $dbh->prepare("SELECT rol FROM usuarios WHERE nombre = :nombre");
+            $stmt->execute([":nombre" => $nombre]);
+            
+            if($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $rol = $row['rol'];
             }
-            return $rol;
+            echo $rol;
+
         }
         
         public function close_sesion(){

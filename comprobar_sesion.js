@@ -1,23 +1,27 @@
 $(document).ready(function() {
-    $(".binput").click(sesion);
-    $(".icon").click(cerrar_sesion);
+
+  p = $("#inf").html();
+  alert(p); 
+  sesion();
+  $(".icon").click(cerrar_sesion);
 });
 
 
 function rol(nom){
-  alert("nom");
+    //alert("hhhh");
     $.ajax({
         type: "POST",
-        url: "call_login.php",
-        cache: false,
+        url: "call_log.php",
         data: {
-            'nom':nom,
+            'nom':nom
         },
         success: function(data) {
+            //alert(data);
            if(data == 1){
-               
+               //alert("mierda"); 
            }else{
-               $("#nombre_usuario").html(nom);
+              //alert("jejejejeje");
+              $("#nombre_usuario").text("nombre");
                
            }
         }
@@ -25,8 +29,9 @@ function rol(nom){
 }
 
 function sesion(){
-    mail = $(".ninput").val();
-    pass = $(".pinput").val();
+    mail = "jesusmeriel@gmail.com";
+    pass = "P@ssw0rd";
+    // alert(pass);
     $.ajax({
        type: "POST",
        url: "comprueba_sesion.php",
@@ -36,8 +41,9 @@ function sesion(){
         },
        success: function(data) {
             nombre = data;
+            // alert(nombre);
             rol(nombre);
-            $(".nomu").html(data);
+            $("#nombre_usuario").html(data);
         }
     });
 }

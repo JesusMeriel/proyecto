@@ -87,6 +87,10 @@
     .buscador{
     	width: 80%;
     }
+
+    .divbusc{
+        width: 0%;
+    }
     
 }
 
@@ -487,3 +491,14 @@
 	font-size: 15px;
     font-family: 'Hind', sans-serif;
 }
+
+#nombre_usuario{
+    border: 3px solid red;
+    width: 60px;
+    height: 40px;   
+    color: black;
+}
+
+/*#inf{
+   display: none;
+}*/
