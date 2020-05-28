@@ -12,7 +12,7 @@ $(document).ready(function() {
     $(".cerror").click(requisitos_reg);
     entrar = 0;
     $(".binput").click(validacion_servidor);
-    $(".binput").click(enviar_inf);
+    // $(".binput").click(enviar_inf);
     $(".binput_reg").click(datos_registro);
     $("#busqueda").keyup(buscar);
     $(".estiloAd").click(admin_usuario);
@@ -249,18 +249,18 @@ function datos_registro(){
          });
     }
 }
-cont = 0;
-function enviar_inf(){
-  alert("inicio "+ cont);
-  cont ++;
-  if(cont == 1){
-    alert(cont);
-    mail = $(".ninput").val();
-    pass = $(".pinput").val();
-  }else if(cont == 2){
-    alert("entra2");
-    $("#inf").text("pene");
-  }
+// cont = 0;
+// function enviar_inf(){
+//   alert("inicio "+ cont);
+//   cont ++;
+//   if(cont == 1){
+//     alert(cont);
+//     mail = $(".ninput").val();
+//     pass = $(".pinput").val();
+//   }else if(cont == 2){
+//     alert("entra2");
+//     $("#inf").text("pene");
+//   }
 
   
-}
+// }

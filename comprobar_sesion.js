@@ -1,11 +1,21 @@
 $(document).ready(function() {
 
-  p = $("#inf").html();
-  alert(p); 
-  sesion();
+  inf();
+
   $(".icon").click(cerrar_sesion);
 });
 
+
+function inf(){
+  $.ajax({
+        type: "POST",
+        url: "call_inf.php",
+        success: function(data) {
+          sesion(data);
+           
+        }
+    });
+}
 
 function rol(nom){
     //alert("hhhh");
@@ -18,10 +28,12 @@ function rol(nom){
         success: function(data) {
             //alert(data);
            if(data == 1){
-               //alert("mierda"); 
+              //alert("jejejejeje");
+              $("#admin_usuario").removeClass("rol");
+              $("#nombre_usuario").html(nom);
            }else{
               //alert("jejejejeje");
-              $("#nombre_usuario").text("nombre");
+              $("#nombre_usuario").html(nom);
                
            }
         }
@@ -43,7 +55,6 @@ function sesion(){
             nombre = data;
             // alert(nombre);
             rol(nombre);
-            $("#nombre_usuario").html(data);
         }
     });
 }

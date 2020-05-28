@@ -21,7 +21,7 @@
 	.center{text-align: center;}
   </style>		
 <div class="container-fluid">
-	<div class="row Amenu">
+  	<div class="row Amenu opacidad sticky-top">
         <div class="offset-xl-1"></div>
         <ul class="nav mboton">
             <div class="tmenu nav-item col-md-2 col-lg-3 col-xl-3">
@@ -34,15 +34,26 @@
                 <a class=" menu hov" href="form_image.html">Sube una foto!</a>
             </div>
         </ul>
-        <div class="col-md-4 col-lg-6 col-xl-6 divbusc">
+        <div class="col-md-2 col-lg-4 col-xl-6 divbusc">
             <form accept-charset="utf-8" method="POST">
                 <i class="fas fa-search icono fa-2x"></i><input type="text" class="buscador" name="busqueda" id="busqueda" value=" " placeholder=" " maxlength="30" autocomplete="off" />
             </form>
         </div>
-        <div class="col-xl-1 nomu">
-            
+        <div class="nom_usu col-xl-1 col-lg-1 col-md-1">
+            <div id="nombre_usuario" class="tu">
+            </div>
+                 
         </div>
-        <div class="icon col-md-1 col-lg-1 col-xl-1"> <i class="fas fa-sign-in-alt fa-2x"></i> </div>
+        <div id="admin_usuario" class="rol">
+          <button  class="btn btn-light dropdown-toggle nomu " type="button" data-toggle="dropdown">
+              
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#" class="estiloAd">Administrar usuarios</a></li> 
+            </ul>
+        </div>
+
+        <div class=" icon col-md-1 col-lg-1 col-xl-1"> <i class="flecha fas fa-sign-in-alt fa-2x"></i> </div>
     </div>
 	<div class="row" id="cuerpo1">
 	    <div class="offset-xl-3"></div>
@@ -52,7 +63,7 @@
 	            <div class="cmenu">
 	                <div class="btn-group dropup">
                       <button type="button" class="btn btn-secondary">
-                        Split dropup
+                        Categorias
                       </button>
                       <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
@@ -77,11 +88,6 @@
                       </div>
                     </div>
 	            </div>
-    	        <form method="post" action="#" id="#">
-                  <div class="form-group files carg">
-                    <input type="file" class="form-control" multiple="">
-                  </div>
-                </form>
     	   </div>
 	    <!--</div>-->
 	    <div class="offset-xl-3"></div>
@@ -89,8 +95,5 @@
 </div>
 <script src="js.js"></script>  
 <script src="comprobar_sesion.js"></script>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </body>
 </html>

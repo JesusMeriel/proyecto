@@ -13,6 +13,21 @@
 
         
 
+        public function inf(){
+
+            $inf = $_SESSION["mail"];
+            $dbh = DatabaseHandler::getConnection();
+            $stmt = $dbh->prepare("SELECT * FROM usuarios WHERE nombre = :inf ");
+            $stmt->execute([":inf" => $inf]);
+            
+            if($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+                echo $row['nombre'];
+            }
+          
+                
+        }
+
 
         public function comprobar_login($mail, $pass){
             $dbh = DatabaseHandler::getConnection();

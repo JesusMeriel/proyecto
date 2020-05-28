@@ -91,7 +91,22 @@
     .divbusc{
         width: 0%;
     }
+
+    .flecha{
+       margin-left: 100%; 
+    }
+
+    .nom_usu{
+        margin-right: 10%;
+    }
+
+    #admin_usuario{
+        margin-left: -5%;
+    }
     
+}
+
+#nombre_usuario{
 }
 
 .tmenu{
@@ -152,7 +167,7 @@
 }
 
 .cmenu{
-    margin-top: 30%;
+    margin-top: 10%;
     height: 5%;
     /*background-color: white;*/
     border-radius: 5px;
@@ -493,12 +508,17 @@
 }
 
 #nombre_usuario{
-    border: 3px solid red;
+    /*border: 3px solid red;*/
     width: 60px;
-    height: 40px;   
-    color: black;
+    height: 40px;
+    color: #8e8e8e;
 }
 
-/*#inf{
+.rol{
    display: none;
-}*/
+}
+
+
+#admin_usuario{
+    
+}
