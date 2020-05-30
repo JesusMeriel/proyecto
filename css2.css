@@ -522,3 +522,63 @@
 #admin_usuario{
     
 }
+
+/*-----------------------------------css carga de fotos--------------------------------------*/
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    border: 1px solid #B0DDB1;
+    height: 30rem;
+    width: 20rem;
+    position: relative;
+    margin-top: -35%;
+}
+
+.card-footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 9px;
+    background: #dfe6e9;
+}
+
+.card-footer input {
+    text-align: center;
+}
+
+#descripcion:hover{
+    text-decoration: none;
+    border:2px solid #B0DDB1;
+}
+
+.categoria{
+    border: 3px solid #8e8e8e;
+    border-radius: 40px;
+    width: 15%;
+    margin-left: 15%;
+    background-color: white;    
+    font-size: 15px;
+}
+/*-----------------------------------css carga de fotos--------------------------------------*/

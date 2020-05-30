@@ -1,7 +1,7 @@
 <?php
-    include 'class_login.php'; 
+    include 'class_usuario.php'; 
 
-    $log = new Login();
+    $log = new Usuario();
     $res = $log -> inf();
     echo $res;
         

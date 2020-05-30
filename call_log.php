@@ -1,5 +1,5 @@
 <?php
-    include 'class_login.php';
+    include 'class_usuario.php';
     // echo $ej;
     // if(isset($_POST["nom"])){
     //     $nombre = $_POST['nom']; 
@@ -8,7 +8,7 @@
     //     echo $resffff;
     // }
     $nombre =$_POST['nom'];
-    $log = new Login();
+    $log = new Usuario();
     $res = $log -> comprueba_rol($nombre);
     echo $res;
     

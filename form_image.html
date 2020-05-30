@@ -61,30 +61,33 @@
 	       
 	       <div class="col-xl-6">
 	            <div class="cmenu">
-	                <div class="btn-group dropup">
-                      <button type="button" class="btn btn-secondary">
-                        Categorias
-                      </button>
-                      <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="sr-only">Toggle Dropdown</span>
-                      </button>
-                      <div class="dropdown-menu">
-                          <ul>
-                              <li class="dropdown-item">Macro</li>
-                              <li class="dropdown-item">Animales</li>
-                              <li class="dropdown-item">Blanco y negro</li>
-                              <li class="dropdown-item">Gente</li>
-                              <li class="dropdown-item">Naturaleza</li>
-                              <li class="dropdown-item">Concierto</li>
-                              <li class="dropdown-item">Deporte</li>
-                              <li class="dropdown-item">Viaje</li>
-                              <li class="dropdown-item">Comida</li>
-                              <li class="dropdown-item">Cine</li>
-                              <li class="dropdown-item">Ciudad</li>
-                              <li class="dropdown-item">Abstracto</li>
-                              <li class="dropdown-item">Celebridades</li>
-                              <li class="dropdown-item">Sin categoria</li>
-                          </ul>
+	                <div class="categoria ">
+                    <form name="formulario" id="formulario" action="#" method="POST">
+                    <ul>
+                      <input type="radio" name="categoria"  value="1" >Animales</li><br>
+                      <input type="radio" name="categoria"  value="2">Gente</li><br>
+                      <input type="radio" name="categoria"  value="3" >Naturaleza</li><br>
+                      <input type="radio" name="categoria"  value="4" >Deporte</li><br>
+                      <input type="radio" name="categoria"  value="5" >Comida</li><br>
+                      <input type="radio" name="categoria"  value="6" >Cine</li><br>
+                      <input type="radio" name="categoria"  value="7" >Ciudad<br>
+                      <input type="radio" name="categoria"  value="8" >Abstracto<br>
+                      <input type="radio" name="categoria"  value="9" >Celebridades<br>
+                      <input type="radio" name="categoria"  value="10" >Sin categoria</li><br>
+                    </ul>
+                    <input type="button" id="image_button">
+                  </form>
+                  </div>
+                   
+                    <div class="container">
+                      <div class="card">
+                          <img id="img-preview">
+                          <div class="card-footer">
+                              <input type="file" id="img-uploader">
+                              <input type="textbox" id="descripcion" placeholder="Escribe una descripcion..." style="width: 100%; text-align: left;">
+                              <input type="textbox" id="etiqueta" placeholder="inserta etiqueta" style="width: 50%; text-align: left;">
+                              <input type="textbox" id="etiqueta2" placeholder="inserta etiqueta" style="width: 50%; float: left; text-align: left;">
+                          </div>
                       </div>
                     </div>
 	            </div>
@@ -93,7 +96,19 @@
 	    <div class="offset-xl-3"></div>
 	</div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="carga_fotos.js"></script>
 <script src="js.js"></script>  
 <script src="comprobar_sesion.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
