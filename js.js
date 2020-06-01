@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    show_img();
+    // alert("entra");
+    vamos();
+
     $(".buscador").focus(a);
     $(".buscador").blur(b);
     $(".ninput").blur(verificaMail_login);
@@ -16,6 +20,7 @@ $(document).ready(function() {
     $(".binput_reg").click(datos_registro);
     $("#busqueda").keyup(buscar);
     $(".estiloAd").click(admin_usuario);
+    // je.src = "https://res.cloudinary.com/degfyt3eg/image/upload/v1590679912/okzn80debbcmthcyyi73.png";
     // setTimeout(function(){  alert("espera");   alert(mail); }, 3000);
     
 
@@ -27,6 +32,79 @@ $(document).ready(function() {
       
     // }
 });
+
+function vamos(){
+    mail = "jesusmeriel@gmail.com";
+    pass = "P@ssw0rd";
+    // alert(pass);
+    $.ajax({
+       type: "POST",
+       url: "comprueba_sesion.php",
+       data: {
+            'mail':mail,
+            'pass':pass
+        },
+       success: function(data) {
+            nombre = data;
+            // alert(nombre);
+            show_img_user(nombre);
+        }
+    });
+}
+
+
+function show_img_user(nombre){
+  // alert(nombre);
+  $.ajax({
+    type: "POST",
+    url: "show_user.php",
+    data: {
+       'nombre':nombre
+    },
+    dataType:"JSON",
+    success: function(data) {
+      cont=0;
+      alert(data[0]);
+      while(cont < Object.keys(data).length){
+        $(".a").append(data[cont]);
+        cont++;
+        $(".b").append(data[cont]);
+        cont++;
+        $(".c").append(data[cont]);
+        cont++;
+        $(".d").append(data[cont]);
+        cont++;
+        $(".e").append(data[cont]);
+        cont++;
+      }
+
+    }
+  });
+}
+
+function show_img(){
+  cont = 0;
+  $.ajax({
+    type: "POST",
+    url: "show.php",
+    dataType:"JSON",
+    success: function(data) {
+      while(cont < Object.keys(data).length){
+        $(".pri").append(data[cont]);
+        cont++;
+        $(".seg").append(data[cont]);
+        cont++;
+        $(".ter").append(data[cont]);
+        cont++;
+        $(".cuar").append(data[cont]);
+        cont++;
+        $(".quin").append(data[cont]);
+        cont++;
+      }
+
+    }
+  });
+}
 
 function prueb(correo){
   $("#inf").text(correo);
